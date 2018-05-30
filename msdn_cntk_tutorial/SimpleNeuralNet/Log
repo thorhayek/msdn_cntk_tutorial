@@ -1,0 +1,42 @@
+CNTK 2.0.beta8.0 (HEAD 66f4d8, Jan 16 2017 05:06:00) on den-pc at 2017/02/28 14:08:38
+
+cntk  configFile=MakePrediction.cntk
+-------------------------------------------------------------------
+Build info: 
+
+		Built time: Jan 16 2017 05:06:00
+		Last modified date: Mon Jan 16 04:50:01 2017
+		Build type: Release
+		Build target: CPU-only
+		With 1bit-SGD: no
+		With ASGD: yes
+		Math lib: mkl
+		Build Branch: HEAD
+		Build SHA1: 66f4d8d594cab128f5fe160ade2adfd04a164004
+		Built by svcphil on dphaim-26-hv1
+		Build Path: C:\jenkins\workspace\CNTK-Build-Windows\Source\CNTK\
+		MPI distribution: Microsoft MPI
+		MPI version: 7.0.12437.6
+-------------------------------------------------------------------
+
+##############################################################################
+#                                                                            #
+# Predict command (eval action)                                              #
+#                                                                            #
+##############################################################################
+
+evalNodeNames are not specified, using all the default evalnodes and training criterion nodes.
+Final Results: Minibatch[1-1]: err = 1.00000000 * 1; ce = -11.62525749 * 1; perplexity = 0.00000894
+
+
+##############################################################################
+#                                                                            #
+# WriteProbs command (write action)                                          #
+#                                                                            #
+##############################################################################
+
+Minibatch[0]: ActualMBSize = 1
+Written to Prediction_txt*
+Total Samples Evaluated = 1
+
+COMPLETED.

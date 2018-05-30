@@ -1,0 +1,35 @@
+ 
+ce=CrossEntropyWithSoftmax ( labels , myNet ) 
+err=ClassificationError ( labels , myNet ) 
+features=InputValue [ 2 ] 
+labels=InputValue [ 3 ] 
+myNet=Plus ( myNet.zn.PlusArgs[0] , myNet.b1 ) 
+myNet.b0=LearnableParameter [5,1]   learningRateMultiplier=1.000000  NeedsGradient=true 
+ -1.80409098 
+ -2.79790497 
+ -1.05887008 
+ -1.63876271 
+ 1.28616095 
+ #################################################################### 
+myNet.b1=LearnableParameter [3,1]   learningRateMultiplier=1.000000  NeedsGradient=true 
+ 2.35593176 
+ -1.34658289 
+ -0.975993156 
+ #################################################################### 
+myNet.hn=Tanh ( myNet.hn.z ) 
+myNet.hn.z=Plus ( myNet.hn.z.PlusArgs[0] , myNet.b0 ) 
+myNet.hn.z.PlusArgs[0]=Times ( myNet.W0 , features ) 
+myNet.W0=LearnableParameter [5,2]   learningRateMultiplier=1.000000  NeedsGradient=true 
+ 0.574521184 -0.84349674 
+ 0.846499741 -1.21783686 
+ 0.500768602 -0.975496531 
+ 2.75515056 -2.88286257 
+ -2.4695065 0.828717053 
+ #################################################################### 
+myNet.W1=LearnableParameter [3,5]   learningRateMultiplier=1.000000  NeedsGradient=true 
+ -1.21530509 -2.02720237 -0.628364146 1.31136417 2.24461508 
+ -0.694195271 -0.232881323 -0.981292009 -2.16571426 -0.8850618 
+ 1.83165693 2.23840308 1.57116306 0.832442522 -1.36655903 
+ #################################################################### 
+myNet.zn.PlusArgs[0]=Times ( myNet.W1 , myNet.hn ) 
+pn=Softmax ( myNet )
